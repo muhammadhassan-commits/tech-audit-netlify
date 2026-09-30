@@ -1,0 +1,34 @@
+[
+ {
+  "id": "beautifulbalivillas-com",
+  "host": "www.beautifulbalivillas.com",
+  "verdict": "CRITICAL_ISSUES",
+  "overall_percent": 40,
+  "started_at": "2026-09-29T20:37:51.335Z",
+  "pages": 6
+ },
+ {
+  "id": "ahrefs-com",
+  "host": "ahrefs.com",
+  "verdict": "NEEDS_WORK",
+  "overall_percent": 58,
+  "started_at": "2026-09-29T20:28:31.907Z",
+  "pages": 10
+ },
+ {
+  "id": "peec-ai",
+  "host": "peec.ai",
+  "verdict": "NEEDS_WORK",
+  "overall_percent": 60,
+  "started_at": "2026-09-29T20:18:55.782Z",
+  "pages": 8
+ },
+ {
+  "id": "wellows-com",
+  "host": "wellows.com",
+  "verdict": "NEEDS_WORK",
+  "overall_percent": 67,
+  "started_at": "2026-09-29T20:10:19.364Z",
+  "pages": 10
+ }
+]
