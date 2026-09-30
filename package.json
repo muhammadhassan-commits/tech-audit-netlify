@@ -1,0 +1,14 @@
+{
+  "name": "technical-audit-netlify-viewer",
+  "version": "1.0.0",
+  "description": "Static viewer for Initial Technical SEO + LLM Visibility Audit reports. Publishes finished audits; the engine runs locally.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

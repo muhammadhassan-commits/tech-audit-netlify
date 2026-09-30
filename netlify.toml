@@ -1,0 +1,44 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# The viewer is a single page that reads its data from /data. Deep links like /#run=<id> are
+# fragments, so no SPA rewrite is needed — but a direct hit on an unknown path should still land
+# on the report list rather than a 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# The filenames are stable across deploys (app.js, app.css, data/*.json), so nothing may be cached
+# without revalidation — otherwise a visitor who saw the last deploy keeps running its JavaScript
+# against the new reports. must-revalidate with max-age=0 still allows a cheap 304.
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
